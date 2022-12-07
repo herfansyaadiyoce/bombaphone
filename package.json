@@ -1,0 +1,22 @@
+{
+  "name": "bomba-phone",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "https://github.com/herfansyaadiyoce/bombaphone.git",
+  "author": "herfansyaadiyoce <herfansyaadiyoce@gmail.com>",
+  "license": "MIT",
+  "scripts": {
+    "start": "node .",
+    "dev": "npx nodemon"
+  },
+  "dependencies": {
+    "cors": "^2.8.5",
+    "ejs": "^3.1.8",
+    "express": "^4.18.2",
+    "helmet": "^6.0.1",
+    "morgan": "^1.10.0"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.20"
+  }
+}
