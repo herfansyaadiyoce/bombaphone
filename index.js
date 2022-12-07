@@ -13,7 +13,7 @@ app.use(helmet());
 app.use(morgan("dev"));
 
 app.get("/", (req, res) => {
-  return res.send("mantap cuk...");
+  return res.send("hario bejat");
 });
 
 app.all("*", (req, res) => {
