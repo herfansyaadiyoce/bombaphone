@@ -11,10 +11,18 @@ app.listen(app.get("port"), console.log("Listen at " + app.get("port")));
 app.use(cors());
 app.use(helmet());
 app.use(morgan("dev"));
+app.set("view engine", "ejs");
 
-app.get("/", (req, res) => {
-  return res.send("hario bejat");
+app.use((_, res, next) => {
+  res.set(
+    "Content-Security-Policy",
+    "default-src *; style-src 'self' http://* 'unsafe-inline'; script-src 'self' http://* 'unsafe-inline' 'unsafe-eval'"
+  );
+  return next();
 });
+
+app.use("/assets", express.static("./assets"));
+require("./router")(app);
 
 app.all("*", (req, res) => {
   return res.send("page not found...");
